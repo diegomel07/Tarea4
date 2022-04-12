@@ -169,6 +169,11 @@ public class miniSia {
                                 break;
                             case 2:
                                 // ejemplo
+                                ArrayList<Grupo> grupos_profe = new ArrayList<Grupo>();
+                                grupos_profe.add(gru_ejemplo);
+                                grupos_profe.add(gru_ejemplo2);
+                                profe_ejemplo.setGrupos(grupos_profe);
+                                profe_ejemplo2.setGrupos(grupos_profe);
                                 System.out.println(profe_ejemplo.toString());
                                 System.out.println(profe_ejemplo2.toString());
                                 break;
@@ -190,6 +195,16 @@ public class miniSia {
                                 break;
                             case 2:
                                 // ejemplo
+                                ArrayList<Materia> mate = new ArrayList<Grupo>();
+                                mate.add(mat_ejemplo);
+                                mate.add(mat_ejemplo2);
+                                progr_ejemplo.setMaterias(mate);
+                                progr_ejemplo2.setMaterias(mate);
+                                ArrayList<Estudiante> est_progr = new ArrayList<Grupo>();
+                                est_progr.add(est_ejemplo);
+                                est_progr.add(est_ejemplo2);
+                                gru_ejemplo.setAsistentes(estudiante_gru);
+                                gru_ejemplo2.setAsistentes(estudiante_gru);
                                 System.out.println(progr_ejemplo.toString());
                                 System.out.println(progr_ejemplo2.toString());
                                 break;
