@@ -1,12 +1,15 @@
-package tarea4.logic;
+package logic;
 
-import tarea4.ui.*;
-import tarea4.data.*;
+import ui.*;
+import data.*;
 import java.util.*;
+
+import data.RecibosPago;
 
 public class miniSia {
     
     public static void main(String[] args) {
+
         interfaz.bienvenida();
         int opcion;
         
@@ -36,8 +39,9 @@ public class miniSia {
         Programa progr_ejemplo = new Programa("Ingeniería de Sistemas y Computación", 01);
         Programa progr_ejemplo2 = new Programa("Matematicas", 02);
         
-        RecibosPago recibo_ejemplo = new RecibosPago(01, 50000, "2022-2");
-        RecibosPago recibo_ejemplo2 = new RecibosPago(02, 2800000, "2022-1");
+        Date fecha = new Date();
+        RecibosPago recibo_ejemplo = new RecibosPago(01, 50000, "2022-2", fecha, fecha);
+        RecibosPago recibo_ejemplo2 = new RecibosPago(02, 2800000, "2022-1", fecha, fecha);
         
         do {
             // menu general
@@ -68,7 +72,7 @@ public class miniSia {
                                 progr_est.add(progr_ejemplo2);
                                 est_ejemplo.setPrograma(progr_est);
                                 est_ejemplo2.setPrograma(progr_est);
-                                System.out.println(est_ejemplo.toString());
+                                System.out.println(est_ejemplo.toString() + "\n");
                                 System.out.println(est_ejemplo2.toString());
                                 break;
                         }
@@ -78,7 +82,7 @@ public class miniSia {
                     break;
 
                 case 2:
-                    // menu egrupo
+                    // menu grupo
                     int opcion_grupo;
                     do{
                         interfaz.menuGrupo();
@@ -195,16 +199,16 @@ public class miniSia {
                                 break;
                             case 2:
                                 // ejemplo
-                                ArrayList<Materia> mate = new ArrayList<Grupo>();
+                                ArrayList<Materia> mate = new ArrayList<Materia>();
                                 mate.add(mat_ejemplo);
                                 mate.add(mat_ejemplo2);
                                 progr_ejemplo.setMaterias(mate);
                                 progr_ejemplo2.setMaterias(mate);
-                                ArrayList<Estudiante> est_progr = new ArrayList<Grupo>();
+                                ArrayList<Estudiante> est_progr = new ArrayList<Estudiante>();
                                 est_progr.add(est_ejemplo);
                                 est_progr.add(est_ejemplo2);
-                                gru_ejemplo.setAsistentes(estudiante_gru);
-                                gru_ejemplo2.setAsistentes(estudiante_gru);
+                                gru_ejemplo.setAsistentes(est_progr);
+                                gru_ejemplo2.setAsistentes(est_progr);
                                 System.out.println(progr_ejemplo.toString());
                                 System.out.println(progr_ejemplo2.toString());
                                 break;
@@ -215,23 +219,25 @@ public class miniSia {
 
                 case 7:
                     // menu recibos de pago
-                    int opcion_reibos_pago;
+                    int opcion_recibos_pago;
                     do{
                         interfaz.menuRecibosPago();
-                        opcion_reibos_pago = interfaz.elegirOpcion();
+                        opcion_recibos_pago = interfaz.elegirOpcion();
 
-                        switch (opcion_reibos_pago){
+                        switch (opcion_recibos_pago){
                             case 1:
                                 // TO DO
                                 break;
                             case 2:
                                 // ejemplo
+                                recibo_ejemplo.setEstudiante(est_ejemplo);
+                                recibo_ejemplo2.setEstudiante(est_ejemplo2);
                                 System.out.println(recibo_ejemplo.toString());
                                 System.out.println(recibo_ejemplo2.toString());
                                 break;
                         }
 
-                    } while(opcion_reibos_pago != 0);
+                    } while(opcion_recibos_pago != 0);
                     break;
                 
                 default:

@@ -22,10 +22,12 @@ public class RecibosPago {
 		this.fechaExtemporanea = fechaExtemporanea;
 	}
 
-	public RecibosPago(long id, double valor, String semestre) {
+	public RecibosPago(long id, double valor, String semestre, Date fechaOportuna, Date fechaExtemporanea) {
 		this.id = id;
 		this.valor = valor;
 		this.semestre = semestre;
+		this.fechaOportuna = fechaOportuna;
+		this.fechaExtemporanea = fechaExtemporanea;
 	}
 
 
