@@ -48,7 +48,7 @@ public class Notas {
     // toString
     @Override
     public String toString() {
-        return "Notas [Nota=" + Nota + ", estudiante=" + estudiante + ", grupo=" + grupo + "]";
+        return "Notas [Nota=" + Nota + ",\nestudiante=" + estudiante + ",\ngrupo=" + grupo + "]";
     }
     
 }

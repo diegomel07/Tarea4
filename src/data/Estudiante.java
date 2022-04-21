@@ -1,7 +1,6 @@
 package data;
 
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
 
 
 public class Estudiante {
@@ -31,13 +30,17 @@ public class Estudiante {
 
     }
 
-    public Estudiante(String nombres, String apellidos, String usuario, String contrasegna, long id, double promedio){
+    public Estudiante(String nombres, String apellidos, String usuario, String contrasegna, long id, double promedio, Date fechaNacimiento){
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.usuario = usuario;
         this.contrasegna = contrasegna;
         this.id = id;
         this.promedio = promedio;
+        this.fechaNacimiento = fechaNacimiento;
+        this.grupos = new ArrayList<Grupo>();
+        this.programa = new ArrayList<Programa>();
+
     }
 
 
@@ -115,15 +118,12 @@ public class Estudiante {
         this.grupos = grupos;
     }
 
-    // toString
     @Override
     public String toString() {
-        return "Estudiante [apellidos=" + apellidos + ", contrasegna=" + contrasegna + ", fechaNacimiento="
-                + fechaNacimiento + ", grupos=" + grupos + ", id=" + id + ", nombres=" + nombres + ", programa="
-                + programa + ", promedio=" + promedio + ", usuario=" + usuario + "]";
+        return "Estudiante [apellidos=" + apellidos + ",\nnombres=" + nombres + ",\nfechaNacimiento="
+                + fechaNacimiento + ",\ncontrasegna=" + contrasegna + ",\nusuario=" + usuario + ",\ngrupos=" + grupos.size() + ",\nid=" + id + ",\nprogramas="
+                + programa.size() + ",\npromedio=" + promedio + "]";
     }
-
-
     
     
 }

@@ -21,6 +21,8 @@ public class Programa {
 	public Programa(String nombre, long id) {
 		this.nombre = nombre;
 		this.id = id;
+		this.materias = new ArrayList<Materia>();
+		this.estudiantes = new ArrayList<Estudiante>();
 	}
 
 
@@ -54,7 +56,7 @@ public class Programa {
 	// toString
 	@Override
 	public String toString() {
-		return "Programa [estudiantes=" + estudiantes + ", id=" + id + ", materias=" + materias + ", nombre=" + nombre
+		return "Programa [estudiantes=" + estudiantes.size() + ",\nid=" + id + ",\nmaterias=" + materias.size() + ",\nnombre=" + nombre
 				+ "]";
 	}
 	

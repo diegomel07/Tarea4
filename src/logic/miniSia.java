@@ -4,17 +4,25 @@ import ui.*;
 import data.*;
 import java.util.*;
 
-import data.RecibosPago;
-
 public class miniSia {
+
+    public static Date getRandomDate(){
+        Date d1 = new Date(650000000000L), d2 = new Date();
+
+        Random rand = new Random();
+
+        Date randomDate = new Date(rand.nextLong(d1.getTime(), d2.getTime()));
+
+        return randomDate;
+    }
     
     public static void main(String[] args) {
 
         interfaz.bienvenida();
         int opcion;
         
-        Estudiante est_ejemplo = new Estudiante("Juan", "Perez", "jperez1", "123", 01, 5.0);
-        Estudiante est_ejemplo2 = new Estudiante("Camila", "Camacho", "ccamacho2", "456", 02, 4.1);
+        Estudiante est_ejemplo = new Estudiante("Juan", "Perez", "jperez1", "123", 01, 5.0, getRandomDate());
+        Estudiante est_ejemplo2 = new Estudiante("Camila", "Camacho", "ccamacho2", "456", 02, 4.1, getRandomDate());
         
         String diasSema[] = {"lunes", "miercoles", "viernes"};
         String vecDia[] = {"mañana", "tarde"};
@@ -33,15 +41,14 @@ public class miniSia {
         Notas nota_ejemplo = new Notas(3.1);
         Notas nota_ejemplo2 = new Notas(3.8);
         
-        Profesor profe_ejemplo = new Profesor("Osvaldo", "De las Rosas", "odelasrosas", "123", 01);
-        Profesor profe_ejemplo2 = new Profesor("Plinio", "Del Carmen", "pCarmen", "456", 02);
+        Profesor profe_ejemplo = new Profesor("Osvaldo", "De las Rosas", "odelasrosas", "123", 01, getRandomDate());
+        Profesor profe_ejemplo2 = new Profesor("Plinio", "Del Carmen", "pCarmen", "456", 02, getRandomDate());
         
         Programa progr_ejemplo = new Programa("Ingeniería de Sistemas y Computación", 01);
         Programa progr_ejemplo2 = new Programa("Matematicas", 02);
         
-        Date fecha = new Date();
-        RecibosPago recibo_ejemplo = new RecibosPago(01, 50000, "2022-2", fecha, fecha);
-        RecibosPago recibo_ejemplo2 = new RecibosPago(02, 2800000, "2022-1", fecha, fecha);
+        RecibosPago recibo_ejemplo = new RecibosPago(01, 50000, "2022-2", getRandomDate(), getRandomDate());
+        RecibosPago recibo_ejemplo2 = new RecibosPago(02, 2800000, "2022-1", getRandomDate(), getRandomDate());
         
         do {
             // menu general
@@ -107,8 +114,8 @@ public class miniSia {
                                 notas_gru.add(nota_ejemplo);
                                 notas_gru.add(nota_ejemplo2);
                                 gru_ejemplo.setNotas(notas_gru);
-                                gru_ejemplo.setNotas(notas_gru);
-                                System.out.println(gru_ejemplo.toString());
+                                gru_ejemplo2.setNotas(notas_gru);
+                                System.out.println(gru_ejemplo.toString() + "\n");
                                 System.out.println(gru_ejemplo2.toString());
                                 break;
                         }
@@ -131,7 +138,7 @@ public class miniSia {
                                 // ejemplo
                                 mat_ejemplo.setPrograma(progr_ejemplo);
                                 mat_ejemplo2.setPrograma(progr_ejemplo2);
-                                System.out.println(mat_ejemplo.toString());
+                                System.out.println(mat_ejemplo.toString() + "\n");
                                 System.out.println(mat_ejemplo2.toString());
                                 break;
                         }
@@ -152,7 +159,7 @@ public class miniSia {
                                 break;
                             case 2:
                                 // ejemplo
-                                System.out.println(nota_ejemplo.toString());
+                                System.out.println(nota_ejemplo.toString() + "\n");
                                 System.out.println(nota_ejemplo2.toString());
                                 break;
                         }
@@ -178,7 +185,7 @@ public class miniSia {
                                 grupos_profe.add(gru_ejemplo2);
                                 profe_ejemplo.setGrupos(grupos_profe);
                                 profe_ejemplo2.setGrupos(grupos_profe);
-                                System.out.println(profe_ejemplo.toString());
+                                System.out.println(profe_ejemplo.toString() + "\n");
                                 System.out.println(profe_ejemplo2.toString());
                                 break;
                         }
@@ -207,9 +214,9 @@ public class miniSia {
                                 ArrayList<Estudiante> est_progr = new ArrayList<Estudiante>();
                                 est_progr.add(est_ejemplo);
                                 est_progr.add(est_ejemplo2);
-                                gru_ejemplo.setAsistentes(est_progr);
-                                gru_ejemplo2.setAsistentes(est_progr);
-                                System.out.println(progr_ejemplo.toString());
+                                progr_ejemplo.setEstudiantes(est_progr);
+                                progr_ejemplo2.setEstudiantes(est_progr);
+                                System.out.println(progr_ejemplo.toString() + "\n");
                                 System.out.println(progr_ejemplo2.toString());
                                 break;
                         }
@@ -232,7 +239,7 @@ public class miniSia {
                                 // ejemplo
                                 recibo_ejemplo.setEstudiante(est_ejemplo);
                                 recibo_ejemplo2.setEstudiante(est_ejemplo2);
-                                System.out.println(recibo_ejemplo.toString());
+                                System.out.println(recibo_ejemplo.toString() + "\n");
                                 System.out.println(recibo_ejemplo2.toString());
                                 break;
                         }
@@ -242,7 +249,7 @@ public class miniSia {
                 
                 default:
                     interfaz.opcionIncorrecta();
-
+                    break;
                 
             }
         } while (opcion != 0);

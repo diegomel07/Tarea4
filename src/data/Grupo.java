@@ -31,6 +31,8 @@ public class Grupo {
 		this.id = id;
 		this.diasSemana = diasSemana;
 		this.vecesDia = vecesDia;
+		this.asistentes = new ArrayList<Estudiante>();
+		this.notas = new ArrayList<Notas>();
 	}
 
 
@@ -80,10 +82,12 @@ public class Grupo {
 	}
 
 	// toString
+
+
 	@Override
 	public String toString() {
-		return "Grupo [asistentes=" + asistentes + ", diasSemana=" + Arrays.toString(diasSemana) + ", enseniadoPor="
-				+ enseniadoPor + ", id=" + id + ", notas=" + notas + ", representa=" + representa + ", vecesDia="
+		return "Grupo [asistentes=" + asistentes.size() + ",\ndiasSemana=" + Arrays.toString(diasSemana) + ",\nenseniadoPor="
+				+ enseniadoPor + ",\nid=" + id + ",\nnotas=" + notas.size() + ",\nrepresenta=" + representa + ",\nvecesDia="
 				+ Arrays.toString(vecesDia) + "]";
 	}
 	

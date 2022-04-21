@@ -20,6 +20,7 @@ public class Materia {
     public Materia(String nombre, Long id) {
         this.nombre = nombre;
         this.id = id;
+        this.grupos = new ArrayList<Grupo>();
     }
 
 
@@ -60,7 +61,7 @@ public class Materia {
     // toString
     @Override
     public String toString() {
-        return "Materia [grupos=" + grupos + ", id=" + id + ", nombre=" + nombre + ", programa=" + programa + "]";
+        return "Materia [grupos=" + grupos + ",\nid=" + id + ",\nnombre=" + nombre + ",\nprograma=" + programa + "]";
     }
 
 }

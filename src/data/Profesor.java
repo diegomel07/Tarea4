@@ -26,12 +26,14 @@ public class Profesor{
 
     
 
-    public Profesor(String nombre, String apellido, String usuario, String contrasenha, long id) {
+    public Profesor(String nombre, String apellido, String usuario, String contrasenha, long id, Date fechaNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.usuario = usuario;
         this.contrasenha = contrasenha;
         this.id = id;
+        this.fechaNacimiento = fechaNacimiento;
+        this.grupos = new ArrayList<Grupo>();
     }
 
 
@@ -96,8 +98,8 @@ public class Profesor{
     // toString
     @Override
     public String toString() {
-        return "Profesor [apellido=" + apellido + ", contrasenha=" + contrasenha + ", fechaNacimiento="
-                + fechaNacimiento + ", grupos=" + grupos + ", id=" + id + ", nombre=" + nombre + ", usuario=" + usuario
+        return "Profesor [apellido=" + apellido + ",\ncontrasenha=" + contrasenha + ",\nfechaNacimiento="
+                + fechaNacimiento + ",\ngrupos=" + grupos.size() + ",\nid=" + id + ",\nnombre=" + nombre + ",\nusuario=" + usuario
                 + "]";
     }
         

@@ -73,8 +73,8 @@ public class RecibosPago {
 	// toString
 	@Override
 	public String toString() {
-		return "RecibosPago [estudiante=" + estudiante + ", fechaExtemporanea=" + fechaExtemporanea + ", fechaOportuna="
-				+ fechaOportuna + ", id=" + id + ", semestre=" + semestre + ", valor=" + valor + "]";
+		return "RecibosPago [estudiante=" + estudiante + ",\nfechaExtemporanea=" + fechaExtemporanea + ",\nfechaOportuna="
+				+ fechaOportuna + ",\nid=" + id + ",\nsemestre=" + semestre + ",\nvalor=" + valor + "]";
 	}
 	
 }
